@@ -1,6 +1,0 @@
-# spqrhash extension
-comment = 'SPQR hash functions'
-default_version = '1.0'
-module_pathname = '$libdir/spqrhash'
-relocatable = true
-superuser = false

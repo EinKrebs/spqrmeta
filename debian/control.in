@@ -1,13 +1,13 @@
-Source: spqrhash
+Source: spqrmeta
 Section: database
 Priority: extra
 Maintainer: Yury Frolov <ein-krebs@yandex-team.ru>
-Build-Depends: debhelper (>= 13~), python3-docutils, postgresql-server-dev-all (>=281~)
+Build-Depends: debhelper (>= 13~), python3-docutils
 Standards-Version: 4.7.2
-Homepage: https://github.com/pg-sharding/spqrhash
+Homepage: https://github.com/pg-sharding/spqrmeta
 
-Package: postgresql-PGVERSION-spqrhash
+Package: postgresql-PGVERSION-spqrmeta
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${postgresql:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${postgresql:Depends}, postgresql-PGVERSION-spqrhash, postgresql-PGVERSION-spqrguard
 Description: SPQR hash functions for PostgreSQL
 

@@ -1,13 +1,4 @@
 
-Files under public domain:
-
-- murmur3.c
-
-Files under PostgreSQL License:
-
-- spqrhash.c
-- spqrhash.h
-
 PostgreSQL license
 ------------------
 
