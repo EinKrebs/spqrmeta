@@ -1,6 +1,6 @@
 # spqrmeta extension
 comment = 'SPQR meta extension'
 default_version = '1.0'
-requires = 'spqrhash, spqrguard'
+requires = 'spqrmeta, spqrguard'
 relocatable = true
 superuser = false

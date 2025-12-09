@@ -8,6 +8,6 @@ Homepage: https://github.com/pg-sharding/spqrmeta
 
 Package: postgresql-PGVERSION-spqrmeta
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${postgresql:Depends}, postgresql-PGVERSION-spqrhash, postgresql-PGVERSION-spqrguard
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${postgresql:Depends}, postgresql-PGVERSION-spqrmeta, postgresql-PGVERSION-spqrguard
 Description: SPQR hash functions for PostgreSQL
 

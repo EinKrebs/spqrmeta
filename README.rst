@@ -1,4 +1,4 @@
-spqrhash
+spqrmeta
 =========
 
 The extension provides hash funcitons for SPQR to work with PG.
@@ -11,19 +11,19 @@ You need PostgreSQL developent environment.  Then simply::
 
   $ make
   $ make install
-  $ psql -d ... -c "create extension spqrhash"
+  $ psql -d ... -c "create extension spqrmeta"
 
 
 Functions
 ---------
 
-spqrhash_murmur3
+spqrmeta_murmur3
 ~~~~~~~~~~~~~
 
 ::
-  spqrhash_murmur3(text) RETURNS int8
-  spqrhash_murmur3(bytea) RETURNS int8
-  spqrhash_murmur3(int8) RETURNS int8
+  spqrmeta_murmur3(text) RETURNS int8
+  spqrmeta_murmur3(bytea) RETURNS int8
+  spqrmeta_murmur3(int8) RETURNS int8
 
 Murmur3 hash algorithm
 
