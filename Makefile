@@ -9,8 +9,6 @@ DISTNAME = spqrmeta-$(EXT_VERSION)
 
 # module description
 MODULE_big = spqrmeta
-SRCS = src/spqrmeta.c src/murmur3.c src/city.c
-OBJS = $(SRCS:.c=.o)
 EXTENSION = $(MODULE_big)
 
 DOCS = spqrmeta.html
@@ -23,13 +21,12 @@ REGRESS_OPTS = --inputdir=test
 Regress_noext = test_init_noext test_int8_murmur test_string_murmur test_string_city32 test_string_varlen_city32 test_int8_city32
 Regress_ext   = test_init_ext   test_int8_murmur test_string_murmur test_string_city32 test_string_varlen_city32 test_int8_city32
 
-Data_noext = sql/spqrmeta.sql sql/uninstall_spqrmeta.sql
-Data_ext = sql/spqrmeta--1.0.sql sql/spqrmeta--unpackaged--1.0.sql
+Data_ext = sql/spqrmeta--1.0.sql
 
 # Work around PGXS deficiencies - switch variables based on
 # whether extensions are supported.
 PgMajor = $(if $(MAJORVERSION),$(MAJORVERSION),15)
-PgHaveExt = $(if $(filter 8.% 9.0,$(PgMajor)),noext,ext)
+PgHaveExt = $(if $(filter 8.% 9.0,$(PgMajor)),ext)
 DATA = $(Data_$(PgHaveExt))
 REGRESS = $(Regress_$(PgHaveExt))
 
@@ -69,9 +66,4 @@ debclean: clean
 
 tgz:
 	git archive --prefix=$(DISTNAME)/ HEAD | gzip -9 > $(DISTNAME).tar.gz
-
-pg_version?=16
-codename?=jammy
-regress:
-	docker build . --tag spqrmeta_regress:1.0 --build-arg POSTGRES_VERSION=$(pg_version) --build-arg codename=$(codename) && docker run spqrmeta_regress:1.0 | tee logs.out
 
